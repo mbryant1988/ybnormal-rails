@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.4', '>= 4.4.1'
 gem 'activeadmin', '~> 1.2', '>= 1.2.1'
 gem 'active_skin', '~> 0.0.12'
+gem 'paperclip', '~> 5.2', '>= 5.2.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

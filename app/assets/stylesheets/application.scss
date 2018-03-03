@@ -10,9 +10,13 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+
  */
+ @import "font-awesome";
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+
  body {
    overflow-x: hidden;
    font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -236,7 +240,7 @@
    }
  }
  header {
-   background-image: url('../img/ybnormal.jpg');
+   background-image: url('yblogo1.jpg');
    background-repeat: no-repeat;
    background-attachment: scroll;
    background-position: center center;
@@ -754,3 +758,34 @@
  body {
    webkit-tap-highlight-color: #fed136;
  }
+
+
+
+ .navbarlogo{
+  height: 40px;
+}
+
+iframe {
+  vertical-align: middle;
+}
+
+
+
+.img-responsive,
+.thumbnail > iframe,
+.thumbnail a > iframe,
+.carousel-inner > .item > iframe,
+.carousel-inner > .item > a > iframe{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#mainNav{
+  color: black;
+  background-color: black;
+}
+
+.nav li a{
+  color: yellow;
+}

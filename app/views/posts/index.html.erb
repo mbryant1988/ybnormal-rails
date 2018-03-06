@@ -246,16 +246,15 @@ cut the hate share the love
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="timeline">
-                      <% a = 1 %>
                         <% @posts.each do |post| %>
-                          <% if a.odd? %>
+                          <% if @a.odd? %>
                         <li>
                             <div class="timeline-image">
-                                <%= image_tag(post.image, :class => "img-circle img-responsive") %>
+                                <%= image_tag(post.image(:square), :class => "img-circle img-responsive") %>
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4><%= a %></h4>
+                                    <h4><%= @a %></h4>
                                     <h4 class="subheading"><%= post.title %></h4>
                                 </div>
                                 <div class="timeline-body">
@@ -263,15 +262,15 @@ cut the hate share the love
                                 </div>
                             </div>
                         </li>
-                        <% a+=1 %>
+
                         <% else %>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <%= image_tag(post.image, :class => "img-circle img-responsive") %>
+                                <%= image_tag(post.image(:square), :class => "img-circle img-responsive") %>
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4><%= a %></h4>
+                                    <h4><%= @a %></h4>
                                     <h4 class="subheading"><%= post.title %></h4>
                                 </div>
                                 <div class="timeline-body">
@@ -280,6 +279,7 @@ cut the hate share the love
                             </div>
                         </li>
                         <% end %>
+                        <% @a+=1 %>
                         <% end %>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
@@ -383,6 +383,35 @@ cut the hate share the love
             </div>
         </div>
     </section>
+
+    <section id="team" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Our Amazing Team</h2>
+                    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
+                </div>
+            </div>
+            <div class="row">
+                <% @teams.each do |team| %>
+                <div class="col-sm-3">
+                    <div class="team-member">
+                        <%= image_tag(team.image(:square), :class => "img-circle img-responsive") %>
+                        <h4><%= team.name %></h4>
+                        <p class="text-muted"><%= team.title %></p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="https://<%= team.twitter %>"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="https://<%= team.facebook %>"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="https://<%= team.youtube %>"><i class="fa fa-youtube"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <% end %>
+              </div>
+          </section>
 
     <!-- Clients Aside -->
     <!-- <aside class="clients">

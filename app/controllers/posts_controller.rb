@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all.order('created_at DESC')
+    @teams = Team.all.order('created_at DESC')
+    @a = 1
   end
 
   def show

@@ -93,36 +93,20 @@ cut the hate share the love
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
+    <% @posts.each_with_index do |post, x| %>
+    <% if x.zero? %>
     <div class="item active">
-      <img src="img/csas.jpg" alt="C.S.A.S." class="img-responsive img-centered">
+    <% else %>
+      <div class="item">
+    <% end %>
+      <%= image_tag(post.image(:square), :class => "img-responsive img-centered") %>
       <div class="carousel-caption">
-        <h3>CSAS</h3>
-        <p>Empowerment Speaking at Chattanooga School for The Arts and Sciences</p>
+        <h3><%= x %></h3>
+        <p><%= post.body %></p>
       </div>
     </div>
+    <% end %>
 
-    <div class="item">
-      <img src="img/Tyner.jpg" alt="Tyner" class="img-responsive img-centered">
-      <div class="carousel-caption">
-        <h3>Tyner</h3>
-        <p>Empowerment Speaking at Tyner Academy</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <img src="img/utc.jpg" alt="U.T.C." class="img-responsive img-centered">
-      <div class="carousel-caption">
-        <h3>U.T.C.</h3>
-        <p>Empowerment Speaking at the University of Tennesee at Chattanooga.</p>
-      </div>
-    </div>
-    <div class="item">
-      <img src="img/ccs.jpg" alt="ccs" class="img-responsive img-centered">
-      <div class="carousel-caption">
-        <h3>CCS</h3>
-        <p>Empowerment Speaking with Chattanooga Christian Schools Girl's Softball Team</p>
-      </div>
-    </div>
   </div>
 
   <!-- Left and right controls -->
@@ -246,15 +230,18 @@ cut the hate share the love
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="timeline">
-                        <% @posts.each do |post| %>
-                          <% if @a.odd? %>
+                        <% @posts.each_with_index do |post, x| %>
+                          <% if x.even? %>
                         <li>
+                          <% else %>
+                          <li class="timeline-inverted">
+                            <% end %>
                             <div class="timeline-image">
                                 <%= image_tag(post.image(:square), :class => "img-circle img-responsive") %>
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4><%= @a %></h4>
+                                    <h4><%= x %></h4>
                                     <h4 class="subheading"><%= post.title %></h4>
                                 </div>
                                 <div class="timeline-body">
@@ -263,23 +250,6 @@ cut the hate share the love
                             </div>
                         </li>
 
-                        <% else %>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <%= image_tag(post.image(:square), :class => "img-circle img-responsive") %>
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4><%= @a %></h4>
-                                    <h4 class="subheading"><%= post.title %></h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted"><%= post.body %></p>
-                                </div>
-                            </div>
-                        </li>
-                        <% end %>
-                        <% @a+=1 %>
                         <% end %>
                         <li class="timeline-inverted">
                             <div class="timeline-image">

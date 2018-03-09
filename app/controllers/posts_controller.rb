@@ -3,6 +3,7 @@ class PostsController < ApplicationController
     @posts = Post.all.order('created_at DESC')
     @teams = Team.all.order('created_at DESC')
     @a = 1
+    @i =1
   end
 
   def show

@@ -84,11 +84,11 @@ cut the hate share the love
       <h2 id="portfolio" class="text-center">Check out our work!</h2>
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
+
   <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <% @posts.each_with_index do |post, x| %>
+    <li data-target="#myCarousel" data-slide-to="<%= x %>"></li>
+    <% end %>
   </ol>
 
   <!-- Wrapper for slides -->

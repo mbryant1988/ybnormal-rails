@@ -1,9 +1,8 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all.order('created_at DESC')
+    @posts = Post.all.order('created_at DESC').limit(4)
     @teams = Team.all.order('created_at DESC')
-    @a = 1
-    @i =1
+    @events = Event.all.order('created_at DESC')
   end
 
   def show

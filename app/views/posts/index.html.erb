@@ -279,7 +279,7 @@ cut the hate share the love
                     <% @events.each do |event| %>
                     <div class="col-sm-3">
                         <div class="team-member">
-                            <% if event.day.future? %>
+                            <% unless event.nil? %>
                             <%= image_tag(event.image(:square), :class => "img-responsive") %>
                             <h3><%= event.title %></h3>
                             <h4><%= event.day.strftime("%A %B %d, %Y") %></h4>

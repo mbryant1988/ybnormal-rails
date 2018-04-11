@@ -50,7 +50,7 @@ cut the hate share the love
                         <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Empowerment Speaking</h4>
-                    <p class="text-muted">I create speaches intended to empower, transform, and inspire the audience.</p>
+                    <p class="text-muted">We create speaches intended to empower, transform, and inspire the audience.</p>
                 </div>
                 <div class="col-md-3">
                     <span class="fa-stack fa-4x">
@@ -58,7 +58,7 @@ cut the hate share the love
                         <i class="fa fa-commenting-o fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Logical Thinking</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <p class="text-muted">Logical thinking is simply daily concepts broken down based on life experiences. It literally correlates basic necessitites with core values needed to succeed in life.</p>
                 </div>
                 <div class="col-md-3">
                     <span class="fa-stack fa-4x">
@@ -275,9 +275,19 @@ cut the hate share the love
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Upcoming Events</h2>
                 </div>
-            </div>
-        </div>
-    </section>
+                <div class="row">
+                    <% @events.each do |event| %>
+                    <div class="col-sm-3">
+                        <div class="team-member">
+                            <%= image_tag(event.image(:square), :class => "img-responsive") %>
+                            <h3><%= event.title %></h3>
+                            <h4><%= event.day.strftime("%A %B %d, %Y") %></h4>
+                            <p class="text-muted"><%= event.description %></p>
+                        </div>
+                    </div>
+                    <% end %>
+                  </div>
+              </section>
 
     <!-- Team Section -->
 
@@ -370,7 +380,7 @@ cut the hate share the love
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">Got Questions? Let us Know!</h3>
                 </div>
             </div>
             <div class="row">
@@ -416,20 +426,11 @@ cut the hate share the love
                     <span class="copyright">Copyright &copy; Y.B.Normal? 2017</span>
                 </div>
                 <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
+                  <h4><a href="#">Back to Top</a></h4>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
-                        </li>
-                        <li><a href="#">Terms of Use</a>
+                        <li>Website by: <a href="https://mbryantwebdev.com">Michael Bryant</a>
                         </li>
                     </ul>
                 </div>

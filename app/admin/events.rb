@@ -12,4 +12,26 @@ ActiveAdmin.register Event do
 #   permitted
 # end
 
+permit_params :title, :description, :day, :image
+
+  show do |t|
+    attributes_table do
+      row :title
+      row :description
+      row :day
+      row :image do
+        event.image? ? image_tag(event.image.url, height: '100') : content_tag(:span, "No Photo Yet")
+      end
+    end
+  end
+
+  form :html => { :enctype => 'multipart/form-data' } do |f|
+    f.inputs do
+      f.input :title
+      f.input :description
+      f.input :day
+      f.input :image, hint: f.event.image? ? image_tag(event.image.url, height: '100') : content_tag(:span, "Upload JPG/PNG/GIF image")
+    end
+    f.actions
+  end
 end

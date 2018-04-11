@@ -103,7 +103,7 @@ cut the hate share the love
     <% else %>
       <div class="item">
     <% end %>
-      <%= image_tag(post.image(:square), :class => "img-responsive img-centered") %>
+      <%= image_tag(post.image(:large), :class => "img-responsive img-centered") %>
       <div class="carousel-caption">
         <h3><%= x %></h3>
         <p><%= post.body %></p>
@@ -287,6 +287,9 @@ cut the hate share the love
                     </div>
                     <% end %>
                   </div>
+                <div class="row">
+                  <p class="text-muted pull-right"><a href="#">Show all</a></p>
+                </div>
               </section>
 
     <!-- Team Section -->

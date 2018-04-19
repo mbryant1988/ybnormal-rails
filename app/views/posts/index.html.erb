@@ -276,20 +276,23 @@ cut the hate share the love
                     <h2 class="section-heading">Upcoming Events</h2>
                 </div>
                 <div class="row">
+                    <% unless @events.count == 0 %>
                     <% @events.each do |event| %>
                     <div class="col-sm-3">
+
                         <div class="team-member">
-                            <% unless event.nil? %>
                             <%= image_tag(event.image(:square), :class => "img-responsive") %>
                             <h3><%= event.title %></h3>
                             <h4><%= event.day.strftime("%A %B %d, %Y") %></h4>
                             <p class="text-muted"><%= event.description %></p>
-                            <% else %>
-                            <p>No events currently planned. Check back with us later.</p>
-                            <% end %>
                         </div>
-                    </div>
+                      <% end %>
+                      <% else %>
+                      <div class="team-member">
+                        <p class="text-muted">No events</p>
+                      </div>
                     <% end %>
+                    </div>
                   </div>
                 <div class="row">
                   <p class="text-muted pull-right"><a href="#">Show all</a></p>

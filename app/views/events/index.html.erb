@@ -1,0 +1,26 @@
+<section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">All Events</h2>
+            </div>
+            <div class="row">
+                <% unless @events.count == 0 %>
+                <% @events.each do |event| %>
+                <div class="col-sm-3">
+
+                    <div class="team-member">
+                        <%= image_tag(event.image(:square), :class => "img-responsive") %>
+                        <h3><%= event.title %></h3>
+                        <h4><%= event.day.strftime("%A %B %d, %Y") %></h4>
+                        <p class="text-muted"><%= event.description %></p>
+                    </div>
+                  <% end %>
+                  <% else %>
+                  <div class="team-member">
+                    <p class="text-muted">No events</p>
+                  </div>
+                <% end %>
+                </div>
+              </div>
+          </section>

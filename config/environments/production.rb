@@ -91,7 +91,9 @@ Rails.application.configure do
     s3_region: ENV.fetch('AWS_REGION'),
   },
   url: "s3_domain_url",
-  :s3_protocol => :https
+  :s3_protocol => :https,
+  :s3_permissions => "private"
+
 }
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?

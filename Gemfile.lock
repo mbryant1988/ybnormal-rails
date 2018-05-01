@@ -269,7 +269,7 @@ PLATFORMS
 DEPENDENCIES
   active_skin (~> 0.0.12)
   activeadmin (~> 1.2, >= 1.2.1)
-  aws-sdk (~> 2.3)
+  aws-sdk (~> 2.6)
   bootstrap-sass (~> 3.3, >= 3.3.7)
   byebug
   capybara (~> 2.13)

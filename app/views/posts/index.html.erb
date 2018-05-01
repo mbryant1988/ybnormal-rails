@@ -103,7 +103,7 @@ cut the hate share the love
     <% else %>
       <div class="item">
     <% end %>
-      <%= image_tag(post.image(:large), :class => "img-responsive img-centered") %>
+      <%= image_tag(post.image.url(:large), :class => "img-responsive img-centered") %>
       <div class="carousel-caption">
         <h3><%= post.title %></h3>
         <p><%= post.body %></p>

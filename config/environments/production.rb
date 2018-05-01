@@ -91,8 +91,7 @@ Rails.application.configure do
     s3_region: ENV.fetch('AWS_REGION'),
   },
   :s3_host_name => 's3.us-east-2.amazonaws.com',
-  :s3_protocol => :https,
-  :s3_permissions => "private"
+  :s3_protocol => :https
 
 }
 

@@ -14,6 +14,7 @@
                         <h3><%= event.title %></h3>
                         <h4><%= event.day.strftime("%A %B %d, %Y") %></h4>
                         <p class="text-muted"><%= event.description %></p>
+                </div>
                     </div>
                   <% end %>
                   <% else %>
@@ -21,6 +22,6 @@
                     <p class="text-muted">No events</p>
                   </div>
                 <% end %>
-                </div>
+
               </div>
           </section>

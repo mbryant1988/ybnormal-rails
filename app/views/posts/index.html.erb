@@ -285,13 +285,14 @@ cut the hate share the love
                             <h4><%= event.day.strftime("%A %B %d, %Y") %></h4>
                             <p class="text-muted"><%= event.description %></p>
                         </div>
+                    </div>
                       <% end %>
                       <% else %>
                       <div class="team-member">
                         <p class="text-muted">No events</p>
                       </div>
                     <% end %>
-                    </div>
+
                   </div>
                 <div class="row">
                   <p class="text-muted pull-right"><%= link_to "Show All", events_path %></p>

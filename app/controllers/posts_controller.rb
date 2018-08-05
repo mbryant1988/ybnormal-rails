@@ -1,13 +1,13 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all.order('created_at DESC')
+    @posts = Post.all.order('created_at DESC').limit(4)
     @teams = Team.all.order('created_at DESC')
     @events = Event.where("day >= ?", Date.today).order("created_at ASC")
   end
 
   def show
     @post = Post.find(params[:id])
-    @posts= Post.order("created_at DESC")
+    @posts= Post.order("created_at DESC").limit(4).offset(1)
   end
 
 private
